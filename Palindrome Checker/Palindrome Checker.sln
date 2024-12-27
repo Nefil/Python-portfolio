@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Palindrome Checker", "Palindrome Checker.pyproj", "{B556C7D4-733C-4B8C-BD22-2E472BBE9DDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B556C7D4-733C-4B8C-BD22-2E472BBE9DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B556C7D4-733C-4B8C-BD22-2E472BBE9DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BB0DEA5-50C5-4500-A61D-062210036A39}
+	EndGlobalSection
+EndGlobal
