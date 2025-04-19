@@ -1,0 +1,25 @@
+
+---
+
+### 🔁 Palindrome Checker
+
+```markdown
+# Palindrome Checker 🔁
+
+Checks whether a given string is a palindrome.
+
+## Features
+- Ignores case and non-alphanumeric characters
+- Provides immediate feedback on the result
+
+## Technologies
+- Python
+
+## What I learned
+- String processing
+- Regular expressions
+- Logical comparisons
+
+## Run the program
+```bash
+python palindrome_checker.py
