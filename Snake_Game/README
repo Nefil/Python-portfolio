@@ -1,0 +1,21 @@
+# Snake Game 🐍
+
+A classic Snake game built with Pygame. The player controls a snake that grows with each apple collected, avoiding collisions with the walls or itself.
+
+## Features
+- Real-time movement with arrow keys
+- Apple spawning and score tracking
+- Collision detection and game over screen
+
+## Technologies
+- Python
+- Turtle
+
+## What I learned
+- Handling game loops and frame rates
+- Using external libraries (`turtle`)
+- Basic collision and event detection
+
+## Run the game
+```bash
+python snake.py
