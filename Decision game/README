@@ -1,0 +1,26 @@
+
+---
+
+### 🧭 Decision Game
+
+```markdown
+# Decision Game 🧭
+
+An interactive text-based adventure game where choices lead to different outcomes.
+
+## Features
+- Multiple decision points
+- Various story paths
+- User input-driven narrative
+
+## Technologies
+- Python
+
+## What I learned
+- Designing branching narratives
+- Handling user input
+- Structuring interactive stories
+
+## Run the game
+```bash
+python decision_game.py
