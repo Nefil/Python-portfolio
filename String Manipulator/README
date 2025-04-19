@@ -1,0 +1,26 @@
+
+---
+
+### 📝 String Manipulator
+
+```markdown
+# String Manipulator 📝
+
+Performs various operations on strings provided by the user.
+
+## Features
+- Converts strings to uppercase and lowercase
+- Reverses strings
+- Counts characters and words
+
+## Technologies
+- Python
+
+## What I learned
+- String methods
+- User input handling
+- Function creation
+
+## Run the program
+```bash
+python string_manipulator.py
