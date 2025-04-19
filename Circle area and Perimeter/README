@@ -1,0 +1,26 @@
+
+---
+
+### 🧮 Circle Area and Perimeter
+
+```markdown
+# Circle Area and Perimeter 🧮
+
+Calculates the area and perimeter of a circle based on the provided radius.
+
+## Features
+- User input for radius
+- Calculates and displays area and perimeter
+
+## Technologies
+- Python
+- Math module
+
+## What I learned
+- Mathematical computations
+- Using built-in math functions
+- Formatting output
+
+## Run the program
+```bash
+python circle_calculator.py
