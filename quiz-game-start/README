@@ -1,0 +1,25 @@
+
+---
+
+## 👨‍🏫 `QuizGame/README.md`
+
+```markdown
+# Quiz Game 🎓
+
+A command-line quiz game that asks the user a series of multiple-choice questions and displays a final score.
+
+## Features
+- 10 pre-defined questions
+- Score calculation
+- Immediate feedback after each question
+
+## Technologies
+- Python
+
+## What I learned
+- Structuring quiz logic
+- Working with lists and conditions
+
+## Run the game
+```bash
+python quiz.py
