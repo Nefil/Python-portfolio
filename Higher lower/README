@@ -1,0 +1,26 @@
+
+---
+
+### 📈 Higher Lower Game
+
+```markdown
+# Higher Lower Game 📈
+
+A simple game where the player guesses whether the next number will be higher or lower.
+
+## Features
+- Random number generation
+- User input handling
+- Score tracking
+
+## Technologies
+- Python
+
+## What I learned
+- Control flow statements
+- Random module usage
+- User interaction in the console
+
+## Run the game
+```bash
+python higher_lower.py
