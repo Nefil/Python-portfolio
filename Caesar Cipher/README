@@ -1,0 +1,15 @@
+# Caesar Cipher Tool 🔐
+
+Encrypt and decrypt text using the Caesar cipher technique.
+
+## Features
+- Encryption and decryption modes
+- Custom shift values
+
+## Technologies
+- Python
+
+## What I learned
+- Basic cryptography principles
+- String manipulation
+
