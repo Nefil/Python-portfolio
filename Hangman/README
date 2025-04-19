@@ -1,0 +1,25 @@
+
+---
+
+## 💀 `Hangman/README.md`
+
+```markdown
+# Hangman 💀
+
+Guess the hidden word letter by letter. Make too many mistakes and the hangman is completed!
+
+## Features
+- Random word selection
+- Tracking of guessed letters
+- ASCII-based hangman drawing
+
+## Technologies
+- Python
+
+## What I learned
+- String operations and loops
+- State management within a game
+
+## Run the game
+```bash
+python hangman.py
