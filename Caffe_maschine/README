@@ -1,0 +1,21 @@
+# Coffee Machine Simulator ☕
+
+A simple terminal-based coffee machine simulator. It allows users to select a type of coffee, checks if enough resources are available, processes the "payment," and updates the inventory.
+
+## Features
+- Coffee types: espresso, latte, cappuccino
+- Resource tracking (water, milk, coffee)
+- Simulated coin input and transaction validation
+- Refill and report options for admin mode
+
+## Technologies
+- Python
+
+## What I learned
+- Building menu-driven interfaces
+- Using dictionaries to store and manage data
+- Input validation and basic state management
+
+## Run the program
+```bash
+python coffee_machine.py
