@@ -1,0 +1,24 @@
+---
+
+## 🃏 `BlackJack/README.md`
+
+```markdown
+# BlackJack 🃏
+
+A simple terminal-based Blackjack game. Compete against the dealer by trying to get as close to 21 as possible without going over.
+
+## Features
+- Full Blackjack rules (hit, stand, bust)
+- Dealer logic
+- Card deck simulation
+
+## Technologies
+- Python (no external libraries)
+
+## What I learned
+- Game mechanics and turn-based logic
+- Randomization and input handling
+
+## Run the game
+```bash
+python blackjack.py
