@@ -1,91 +1,104 @@
 import random
-import sys, os
+import sys
 
 wallet = 400
+bet = 200
 
 cards = {
-    "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
+    "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10,
     "J": 10, "Q": 10, "K": 10, "A": 11
 }
 
+def hand_value(hand):
+    # Calculate the value of the hand, converting all aces from 11 to 1 as needed
+    values = [cards[card] for card in hand]
+    while sum(values) > 21 and values.count(11):
+        idx = values.index(11)
+        values[idx] = 1
+    return sum(values)
+
+def print_hand(label, hand):
+    print(f"{label}: {' '.join(hand)} (sum: {hand_value(hand)})")
+
 print(f"Your wallet: {wallet}$")
-print("You need 200$ to start the game")
+print(f"You need {bet}$ to start the game")
 start = input("Welcome to Black Jack! Do you want to start the game? (yes/no) ").lower().strip()
 
 if start == "yes":
-    while wallet >= 200:
-        dealer_cards = []
-        player_cards = []
+    while wallet >= bet:
+        wallet -= bet  # Deduct the bet at the start of each round
 
-        # Dealer draws 2 cards
-        for _ in range(2):
-            dealer_cards.append(random.choice(list(cards.keys())))
-        print("Dealer's card:", dealer_cards[0])
+        # Draw two cards for the dealer and player
+        dealer_cards = [random.choice(list(cards.keys())) for _ in range(2)]
+        player_cards = [random.choice(list(cards.keys())) for _ in range(2)]
 
-        # Player draws 2 cards
-        for _ in range(2):
-            player_cards.append(random.choice(list(cards.keys())))
-        print("Your cards:", *player_cards)
+        print_hand("Dealer's card", [dealer_cards[0]])
+        print_hand("Your cards", player_cards)
 
-        # Ask the player if they want another card
+        # Check for initial blackjack (21 points with two cards)
+        player_blackjack = hand_value(player_cards) == 21 and len(player_cards) == 2
+        dealer_blackjack = hand_value(dealer_cards) == 21 and len(dealer_cards) == 2
+
+        if player_blackjack or dealer_blackjack:
+            print_hand("Dealer's cards", dealer_cards)
+            if player_blackjack and dealer_blackjack:
+                print("Draw! Both have blackjack! You get your bet back.")
+                wallet += bet
+            elif player_blackjack:
+                print("Blackjack! You win 1.5x bet! (+300$)")
+                wallet += int(bet * 2.5)
+            else:
+                print("Dealer has blackjack! You lose your bet.")
+            print(f"Your wallet: {wallet}$")
+            end = input("Do you want to exit the game? (yes/no) ").lower().strip()
+            if end == "yes":
+                break
+            continue
+
         choice = input("Do you want to get another card? (yes/no) ").lower().strip()
         if choice == "yes":
             player_cards.append(random.choice(list(cards.keys())))
-            print("Your cards:", *player_cards)
+            print_hand("Your cards", player_cards)
         else:
             print("You chose not to get another card.")
 
-        # Dealer randomly draws a third card or not
+        # Dealer randomly draws a third card or not (not realistic, but as in the original)
         if random.randint(1, 2) == 1:
             dealer_cards.append(random.choice(list(cards.keys())))
             print("The dealer drew a third card.")
         else:
             print("The dealer didn't draw a third card.")
 
-        print("Dealer's cards:", *dealer_cards)
+        print_hand("Dealer's cards", dealer_cards)
 
-        # Calculate the player's total with Ace adjustment
-        player_values = [cards[card] for card in player_cards]
-        while sum(player_values) > 21 and "A" in player_cards:
-            for i, card in enumerate(player_cards):
-                if card == "A" and player_values[i] == 11:
-                    player_values[i] = 1
-                    break
-        sum_player = sum(player_values)
+        sum_player = hand_value(player_cards)
+        sum_dealer = hand_value(dealer_cards)
 
-        # Calculate the dealer's total with Ace adjustment
-        dealer_values = [cards[card] for card in dealer_cards]
-        while sum(dealer_values) > 21 and "A" in dealer_cards:
-            for i, card in enumerate(dealer_cards):
-                if card == "A" and dealer_values[i] == 11:
-                    dealer_values[i] = 1
-                    break
-        sum_dealer = sum(dealer_values)
-
-        # Determine the game result
+        # Determine the result of the round
         if sum_player > 21 and sum_dealer > 21:
-            print("Draw! Both hands exceed 21!")
+            print("Draw! Both hands exceed 21! You get your bet back.")
+            wallet += bet
         elif sum_dealer > 21:
-            print("You win! +200$")
-            wallet += 200
+            print("Dealer busted! You win (+400$)")
+            wallet += bet * 2
         elif sum_player > 21:
-            print("You lose 200$")
-            wallet -= 200
+            print("You busted! You lose your bet.")
         elif sum_player > sum_dealer:
-            print("You win! +200$")
-            wallet += 200
+            print("You win! (+400$)")
+            wallet += bet * 2
         elif sum_player < sum_dealer:
-            print("You lose 200$")
-            wallet -= 200
+            print("Dealer wins! You lose your bet.")
         else:
-            print("Draw! No wallet change.")
+            print("Draw! You get your bet back.")
+            wallet += bet
 
         print(f"Your wallet: {wallet}$")
+        if wallet < bet:
+            print("You don't have enough money to play again.")
+            break
 
         end = input("Do you want to exit the game? (yes/no) ").lower().strip()
         if end == "yes":
-            wallet = 0
-            os.system("cls")
-
+            break
 else:
     sys.exit(0)
